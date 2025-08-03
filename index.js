@@ -3,7 +3,7 @@
  * @returns {number} the length of the array
  */
 function getLength(numbers) {
-  // TODO
+  return numbers.length;
 }
 
 /**
@@ -11,7 +11,11 @@ function getLength(numbers) {
  * @returns {number} the sum of the numbers
  */
 function getSum(numbers) {
-  // TODO
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  return sum; 
 }
 
 /**
@@ -19,7 +23,7 @@ function getSum(numbers) {
  * @returns {number} the mean of the numbers
  */
 function getMean(numbers) {
-  // TODO
+  return getSum(numbers) / getLength(numbers);
 }
 
 /**
@@ -27,7 +31,14 @@ function getMean(numbers) {
  * @returns {number} the smallest of the numbers
  */
 function getMin(numbers) {
-  // TODO
+  let min = numbers[0]; 
+  for (let i = 1; i < numbers.length; i++) {
+    let current = numbers[i];
+    if (min > current) {
+      min = current;
+    }
+    return min;
+  }
 }
 
 /**
@@ -35,7 +46,14 @@ function getMin(numbers) {
  * @returns {number} the largest of the numbers
  */
 function getMax(numbers) {
-  // TODO
+  let max = numbers[0];
+  for (let i = 1; i < numbers.length; i++) {
+    let current = numbers[i];
+    if (max < current) {
+      max = current;
+    }
+  }
+  return max;
 }
 
 /**
@@ -43,7 +61,7 @@ function getMax(numbers) {
  * @returns {number} the range of the numbers (max - min)
  */
 function getRange(numbers) {
-  // TODO
+  return getMax(numbers) - getMin(numbers);
 }
 
 /**
@@ -51,7 +69,14 @@ function getRange(numbers) {
  * @returns {number[]} the even numbers in the array
  */
 function getEvens(numbers) {
-  // TODO
+  let evens = [];
+  for (let i = 0; i < numbers.length; i++) {
+    let current = numbers[i];
+    if (current % 2 === 0) {
+      evens.push(current);
+    }
+  }
+  return evens;
 }
 
 /**
@@ -59,7 +84,14 @@ function getEvens(numbers) {
  * @returns {number[]} the odd numbers in the array
  */
 function getOdds(numbers) {
-  // TODO
+  let odds = [];
+  for (let i = 0; i < numbers.length; i++) {
+    let current = numbers[i];
+    if (current % 2 !== 0) {
+      odds.push(current);
+    }
+  }
+  return odds;
 }
 
 // === READ BUT DO NOT EDIT THE CODE BELOW ===
